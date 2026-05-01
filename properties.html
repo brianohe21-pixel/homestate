@@ -3,13 +3,13 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es"> <!--<![endif]-->
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Homestate &mdash; 100% Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<title data-i18n="meta.title.properties">Condominio Ecológico — Propiedades</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+	<meta name="description" data-i18n-content="meta.desc" content="Condominio Ecológico: propiedades y vida en armonía con el entorno." />
 	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FREEHTML5.CO" />
 
@@ -80,24 +80,13 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-home"></i>Home<span>state</span></a></h1>
+					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-home"></i>Condominio<span> Ecológico</span></a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a href="index.html">Home</a></li>
-							<li class="active">
-								<a href="properties.html" class="fh5co-sub-ddown">Properties</a>
-								<ul class="fh5co-sub-menu">
-									<li><a href="#">Family</a></li>
-									<li><a href="#">CSS3 &amp; HTML5</a></li>
-									<li><a href="#">Angular JS</a></li>
-									<li><a href="#">Node JS</a></li>
-									<li><a href="#">Django &amp; Python</a></li>
-								</ul>
-							</li>
-							<li><a href="agent.html">Agent</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+							<li><a href="contact.html" data-i18n="nav.contact">Contacto</a></li>
+							<li class="lang-switch"><span class="lang-btn" data-set-lang="es">ES</span><span class="lang-sep">|</span><span class="lang-btn" data-set-lang="en">EN</span></li>
 						</ul>
 					</nav>
 				</div>
@@ -115,8 +104,8 @@
 			   			<div class="row">
 				   			<div class="col-md-8 col-md-offset-2 text-center js-fullheight slider-text">
 			   				<div class="slider-text-inner">
-			   						<h2 class="heading-title">Our Properties</h2>
-			   						<p class="fh5co-lead">Designed with <i class="icon-heart3"></i> by the fine folks at <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
+			   						<h2 class="heading-title" data-i18n="properties.hero.title">Nuestras propiedades</h2>
+			   						<p class="fh5co-lead" data-i18n="hero.credit" data-i18n-html>Diseñado con <i class="icon-heart3"></i> por el equipo de <a href="http://freehtml5.co" target="_blank">FreeHTML5.co</a></p>
 			   				</div>
 			   			</div>
 				   		</div>
@@ -126,257 +115,125 @@
 		  	</div>
 		</aside>
 
-		<div id="fh5co-search-map">
-			<div class="search-property">
-				<div class="s-holder">
-					<h2>Search Properties</h2>
-					<div class="row">
-						<div class="col-xxs-12 col-xs-12">
-							<div class="input-field">
-								<label for="from">Keyword:</label>
-								<input type="text" class="form-control" id="from-place" placeholder="Any"/>
-							</div>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Property Status:</label>
-								<select class="cs-select cs-skin-border">
-									<option value="" disabled selected>Any</option>
-									<option value="1">Rent</option>
-									<option value="2">Sale</option>
-								</select>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Property Type:</label>
-								<select class="cs-select cs-skin-border input-half">
-									<option value="" disabled selected>Any</option>
-									<option value="1">Building</option>
-									<option value="2">Office</option>
-								</select>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<div class="input-field">
-								<label for="from">Location:</label>
-								<input type="text" class="form-control" id="from-place" placeholder="Any"/>
-							</div>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Price:</label>
-								<div class="wide">
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-								</div>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Bedrooms:</label>
-								<div class="wide">
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-								</div>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Bathrooms:</label>
-								<div class="wide">
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-								</div>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Area:</label>
-								<div class="wide">
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-								</div>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12">
-							<section>
-								<label for="class">Parking spots:</label>
-								<div class="wide">
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-									<select class="cs-select cs-select-half cs-skin-border input-half">
-										<option value="" disabled selected>Any</option>
-										<option value="1">Building</option>
-										<option value="2">Office</option>
-									</select>
-								</div>
-							</section>
-						</div>
-						<div class="col-xxs-12 col-xs-12 text-center">
-							<p><a class="btn btn-primary btn-lg" href="#">Learn More</a></p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="map" style="background-image: url(images/cover_bg_1.jpg);">
-			</div>
-		</div>
-
 		<div id="fh5co-properties" class="fh5co-section-gray">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Newest Properties</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<h3 data-i18n="properties.newest.title">Propiedades más recientes</h3>
+						<p data-i18n="properties.newest.sub">Últimas incorporaciones al catálogo: revisa detalles y agenda una visita.</p>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-1.jpg);">
-								<span class="status">Sale</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-1.jpeg);">
+								<span class="status" data-i18n="status.sale">Venta</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>Properties Near in Beach</h3>
+								<h3 data-i18n="prop.p1.title">Propiedades cerca de la playa</h3>
 								<span class="price">$3,000</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-2.jpg);">
-								<span class="status">Rent</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-2.jpeg);">
+								<span class="status" data-i18n="status.rent">Alquiler</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>Modern House at NZ</h3>
+								<h3 data-i18n="prop.p2.title">Casa moderna en NZ</h3>
 								<span class="price">$200/mos</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-3.jpg);">
-								<span class="status">Sale</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-3.jpeg);">
+								<span class="status" data-i18n="status.sale">Venta</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>Bonggalo House</h3>
+								<h3 data-i18n="prop.p3.title">Casa bungalow</h3>
 								<span class="price">$3,000</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>						
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-4.jpg);">
-								<span class="status">Sale</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-4.jpeg);">
+								<span class="status" data-i18n="status.sale">Venta</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>Properties at Alaska</h3>
+								<h3 data-i18n="prop.p4.title">Propiedades en Alaska</h3>
 								<span class="price">$3,000</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-5.jpg);">
-								<span class="status">Rent</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-5.jpeg);">
+								<span class="status" data-i18n="status.rent">Alquiler</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>Modern Properties</h3>
+								<h3 data-i18n="prop.p5.title">Propiedades modernas</h3>
 								<span class="price">$200/mos</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>
 							</div>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
 						<div class="property">
-							<a href="#" class="fh5co-property" style="background-image: url(images/property-6.jpg);">
-								<span class="status">Sale</span>
+							<a href="#" class="fh5co-property" style="background-image: url(images/photo-6.jpeg);">
+								<span class="status" data-i18n="status.sale">Venta</span>
 								<ul class="list-details">
-									<li>2000 ft sq<li>
-									<li>5 Bedroom:</li>
-									<li>4 Bathroom:</li>
-									<li>3 Garage:</li>
+									<li data-i18n="prop.detail_sqft">2000 pies²</li>
+									<li data-i18n="prop.detail_bed">5 dormitorios</li>
+									<li data-i18n="prop.detail_bath">4 baños</li>
+									<li data-i18n="prop.detail_garage">3 plazas garaje</li>
 								</ul>
 							</a>
 							<div class="property-details">
-								<h3>House at the Top of Mountain</h3>
+								<h3 data-i18n="prop.p6.title">Casa en la cima de la montaña</h3>
 								<span class="price">$3,000</span>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
+								<p data-i18n="prop.lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores.</p>
 								<span class="address"><i class="icon-map"></i>Thomas Street, St. Louis, MO 8990, USA</span>
 							</div>
 						</div>
@@ -390,39 +247,36 @@
 				<div class="container">
 					<div class="row row-bottom-padded-md">
 						<div class="col-md-3">
-							<h3 class="section-title">About Homestate</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+							<h3 class="section-title" data-i18n="footer.about_title">Sobre Condominio Ecológico</h3>
+							<p data-i18n="footer.about">Muy lejos, tras las montañas de las palabras, lejos de los países de Vokalia y Consonantia, viven los textos ciegos. Separados viven en Bookmarksgrove, junto a la costa de Semantics.</p>
 						</div>
 						
 						<div class="col-md-3 col-md-push-1">
-							<h3 class="section-title">Links</h3>
+							<h3 class="section-title" data-i18n="footer.links">Enlaces</h3>
 							<ul>
-								<li><a href="#">Home</a></li>
-								<li><a href="#">Properties</a></li>
-								<li><a href="#">Agent</a></li>
-								<li><a href="#">Blog</a></li>
-								<li><a href="#">API</a></li>
-								<li><a href="#">FAQ / Contact</a></li>
+								<li><a href="#" data-i18n="footer.link_home">Inicio</a></li>
+								<li><a href="#" data-i18n="footer.link_api">API</a></li>
+								<li><a href="#" data-i18n="footer.link_faq">Preguntas frecuentes / Contacto</a></li>
 							</ul>
 						</div>
 
 						<div class="col-md-3">
-							<h3 class="section-title">Information</h3>
+							<h3 class="section-title" data-i18n="footer.information">Información</h3>
 							<ul>
-								<li><a href="#">Terms &amp; Condition</a></li>
-								<li><a href="#">License</a></li>
-								<li><a href="#">Privacy &amp; Policy</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#" data-i18n="footer.tos">Términos y condiciones</a></li>
+								<li><a href="#" data-i18n="footer.license">Licencia</a></li>
+								<li><a href="#" data-i18n="footer.privacy">Privacidad y política</a></li>
+								<li><a href="#" data-i18n="footer.contact_link">Contacto</a></li>
 							</ul>
 						</div>
 						<div class="col-md-3">
-							<h3 class="section-title">Newsletter</h3>
-							<p>Subscribe for our newsletter</p>
+							<h3 class="section-title" data-i18n="footer.newsletter">Boletín</h3>
+							<p data-i18n="footer.newsletter_sub">Suscríbete a nuestro boletín</p>
 							<form class="form-inline" id="fh5co-header-subscribe">
 								<div class="row">
 									<div class="col-md-12 col-md-offset-0">
 										<div class="form-group">
-											<input type="text" class="form-control" id="email" placeholder="Enter your email">
+											<input type="text" class="form-control" id="email" placeholder="Introduce tu correo" data-i18n-placeholder="footer.ph_email">
 											<button type="submit" class="btn btn-default"><i class="icon-paper-plane"></i></button>
 										</div>
 									</div>
@@ -439,7 +293,7 @@
 								<a href="#"><i class="icon-dribbble2"></i></a>
 								<a href="#"><i class="icon-youtube"></i></a>
 							</p>
-							<p>Copyright 2016 Free Html5 <a href="#">Module</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a> &amp; <a href="http://blog.gessato.com/" target="_blank">Gessato</a></p>
+							<p data-i18n="footer.copyright" data-i18n-html>Copyright 2016 Free Html5 <a href="#">Module</a>. Todos los derechos reservados. <br>Hecho con <i class="icon-heart3"></i> por <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Imágenes demo: <a href="https://unsplash.com/" target="_blank">Unsplash</a> y <a href="http://blog.gessato.com/" target="_blank">Gessato</a></p>
 						</div>
 					</div>
 				</div>
@@ -477,6 +331,7 @@
 	<script src="js/selectFx.js"></script>
 
 	
+	<script src="js/i18n.js"></script>
 	<!-- Main JS -->
 	<script src="js/main.js"></script>
 

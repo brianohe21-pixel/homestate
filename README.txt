@@ -1,6 +1,6 @@
 
 TITLE: 
-Homestate - 100% Fully Responsive Free HTML5 Bootstrap Template
+Condominio Ecológico - Deriva de plantilla responsive Homestate / FREEHTML5
 
 AUTHOR:
 DESIGNED & DEVELOPED by FREEHTML5.co
