@@ -17,33 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Create mail config
-        env:
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASS: ${{ secrets.SMTP_PASSWORD }}
-        run: |
-          php <<'PHP'
-          <?php
-          $user = getenv('SMTP_USER') ?: '';
-          $pass = getenv('SMTP_PASS') ?: '';
-          if ($user === '' || $pass === '') {
-            echo 'SMTP secrets not configured; keeping existing mail-config.php on server.';
-            exit(0);
-          }
-          $config = [
-            'smtp_host' => 'smtp.gmail.com',
-            'smtp_port' => 587,
-            'smtp_user' => $user,
-            'smtp_pass' => $pass,
-            'mail_to' => 'condominioecologicoinfo@gmail.com',
-            'from_email' => $user,
-            'from_name' => 'Condominio Ecológico',
-            'site_url' => 'https://condominioecologico.com',
-          ];
-          file_put_contents('mail-config.php', "<?php\nreturn " . var_export($config, true) . ";\n");
-          echo 'mail-config.php created for deploy.';
-          PHP
-
       - name: FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
