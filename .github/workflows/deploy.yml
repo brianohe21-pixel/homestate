@@ -18,20 +18,27 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create mail config
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASSWORD }}
         run: |
-          cat > mail-config.php <<EOF
+          php <<'PHP'
           <?php
-          return [
+          $config = [
             'smtp_host' => 'smtp.gmail.com',
             'smtp_port' => 587,
-            'smtp_user' => '${{ secrets.SMTP_USER }}',
-            'smtp_pass' => '${{ secrets.SMTP_PASSWORD }}',
+            'smtp_user' => getenv('SMTP_USER') ?: '',
+            'smtp_pass' => getenv('SMTP_PASS') ?: '',
             'mail_to' => 'condominioecologicoinfo@gmail.com',
-            'from_email' => '${{ secrets.SMTP_USER }}',
+            'from_email' => getenv('SMTP_USER') ?: '',
             'from_name' => 'Condominio Ecológico',
             'site_url' => 'https://condominioecologico.com',
           ];
-          EOF
+          file_put_contents('mail-config.php', "<?php\nreturn " . var_export($config, true) . ";\n");
+          if ($config['smtp_user'] === '' || $config['smtp_pass'] === '') {
+            fwrite(STDERR, "Warning: SMTP_USER or SMTP_PASSWORD secrets are missing.\n");
+          }
+          PHP
 
       - name: FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5

@@ -48,7 +48,8 @@ $config = require $configPath;
 if (
 	empty($config['smtp_host']) ||
 	empty($config['smtp_user']) ||
-	empty($config['smtp_pass']) ||
+	!isset($config['smtp_pass']) ||
+	$config['smtp_pass'] === '' ||
 	empty($config['mail_to'])
 ) {
 	http_response_code(500);
@@ -97,32 +98,72 @@ $htmlBody = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"></head><
 	. '</td></tr></table>'
 	. '</body></html>';
 
-try {
-	$mail = new PHPMailer(true);
+function configureMailer(PHPMailer $mail, array $config, int $port, string $encryption): void
+{
 	$mail->isSMTP();
 	$mail->Host = $config['smtp_host'];
 	$mail->SMTPAuth = true;
 	$mail->Username = $config['smtp_user'];
 	$mail->Password = $config['smtp_pass'];
-	$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-	$mail->Port = (int) ($config['smtp_port'] ?? 587);
+	$mail->Port = $port;
 	$mail->CharSet = 'UTF-8';
-	$mail->XMailer = ' ';
-	$mail->Priority = 3;
+	$mail->Timeout = 30;
+	$mail->SMTPOptions = [
+		'ssl' => [
+			'verify_peer' => true,
+			'verify_peer_name' => true,
+			'allow_self_signed' => false,
+		],
+	];
 
+	if ($encryption === 'ssl') {
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+	} else {
+		$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+	}
+}
+
+function sendContactMail(array $config, string $subject, string $htmlBody, string $plainBody, string $replyName, string $replyEmail): void
+{
 	$fromEmail = $config['from_email'] ?? $config['smtp_user'];
 	$fromName = $config['from_name'] ?? 'Condominio Ecológico';
+	$attempts = [
+		[(int) ($config['smtp_port'] ?? 587), 'tls'],
+		[465, 'ssl'],
+	];
 
-	$mail->setFrom($fromEmail, $fromName);
-	$mail->Sender = $fromEmail;
-	$mail->addAddress($config['mail_to']);
-	$mail->addReplyTo($email, $name);
-	$mail->Subject = $subject;
-	$mail->isHTML(true);
-	$mail->Body = $htmlBody;
-	$mail->AltBody = $plainBody;
+	$lastError = null;
 
-	$mail->send();
+	foreach ($attempts as $index => $attempt) {
+		[$port, $encryption] = $attempt;
+		if ($index > 0 && $port === (int) ($config['smtp_port'] ?? 587)) {
+			continue;
+		}
+
+		$mail = new PHPMailer(true);
+		configureMailer($mail, $config, $port, $encryption);
+
+		$mail->setFrom($fromEmail, $fromName);
+		$mail->addAddress($config['mail_to']);
+		$mail->addReplyTo($replyEmail, $replyName);
+		$mail->Subject = $subject;
+		$mail->isHTML(true);
+		$mail->Body = $htmlBody;
+		$mail->AltBody = $plainBody;
+
+		try {
+			$mail->send();
+			return;
+		} catch (MailException $e) {
+			$lastError = $mail->ErrorInfo ?: $e->getMessage();
+		}
+	}
+
+	throw new MailException($lastError ?: 'SMTP send failed');
+}
+
+try {
+	sendContactMail($config, $subject, $htmlBody, $plainBody, $name, $email);
 	echo json_encode(['ok' => true]);
 } catch (MailException $e) {
 	http_response_code(500);
