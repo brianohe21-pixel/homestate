@@ -26,7 +26,7 @@ jobs:
           protocol: ftp
           port: 21
           timeout: 900000
-          server-dir: public_html/condominioecologico.com/
+          server-dir: condominioecologico.com/
           local-dir: ./
           exclude: |
             **/.git*
