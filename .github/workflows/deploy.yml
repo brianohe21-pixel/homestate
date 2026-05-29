@@ -17,6 +17,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Create mail config
+        run: |
+          cat > mail-config.php <<EOF
+          <?php
+          return [
+            'smtp_host' => 'smtp.gmail.com',
+            'smtp_port' => 587,
+            'smtp_user' => '${{ secrets.SMTP_USER }}',
+            'smtp_pass' => '${{ secrets.SMTP_PASSWORD }}',
+            'mail_to' => 'condominioecologicoinfo@gmail.com',
+            'from_email' => '${{ secrets.SMTP_USER }}',
+            'from_name' => 'Condominio Ecológico',
+            'site_url' => 'https://condominioecologico.com',
+          ];
+          EOF
+
       - name: FTP deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
