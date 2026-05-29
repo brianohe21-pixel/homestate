@@ -24,20 +24,24 @@ jobs:
         run: |
           php <<'PHP'
           <?php
+          $user = getenv('SMTP_USER') ?: '';
+          $pass = getenv('SMTP_PASS') ?: '';
+          if ($user === '' || $pass === '') {
+            echo 'SMTP secrets not configured; keeping existing mail-config.php on server.';
+            exit(0);
+          }
           $config = [
             'smtp_host' => 'smtp.gmail.com',
             'smtp_port' => 587,
-            'smtp_user' => getenv('SMTP_USER') ?: '',
-            'smtp_pass' => getenv('SMTP_PASS') ?: '',
+            'smtp_user' => $user,
+            'smtp_pass' => $pass,
             'mail_to' => 'condominioecologicoinfo@gmail.com',
-            'from_email' => getenv('SMTP_USER') ?: '',
+            'from_email' => $user,
             'from_name' => 'Condominio Ecológico',
             'site_url' => 'https://condominioecologico.com',
           ];
           file_put_contents('mail-config.php', "<?php\nreturn " . var_export($config, true) . ";\n");
-          if ($config['smtp_user'] === '' || $config['smtp_pass'] === '') {
-            fwrite(STDERR, "Warning: SMTP_USER or SMTP_PASSWORD secrets are missing.\n");
-          }
+          echo 'mail-config.php created for deploy.';
           PHP
 
       - name: FTP deploy
