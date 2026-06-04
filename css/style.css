@@ -288,8 +288,6 @@ figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-title, #fh5co-hero .hero-video-wrap .slider-text > .slider-text-inner .heading-title {
   font-size: 60px; }
 
-.fh5co-mobile-intro {
-  display: none; }
 .fh5co-mobile-intro .mobile-intro-inner {
   max-width: 640px;
   margin: 0 auto; }
@@ -327,16 +325,21 @@ figure {
   line-height: 1.5; }
 .fh5co-mobile-intro .mobile-intro-cta {
   margin: 24px 0 0 0; }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
+  #fh5co-hero .hero-video-wrap .slider-text.hero-slide-desktop,
   #fh5co-hero .hero-slide-desktop {
-    display: none !important; }
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important; }
   #fh5co-hero,
   #fh5co-hero .hero-video-wrap {
     min-height: 55vh; }
-  #fh5co-hero .hero-video-wrap .slider-text > .slider-text-inner {
-    min-height: 55vh; }
   .fh5co-mobile-intro {
-    display: block;
     padding: 2.5em 0; } }
 
 /* Superfish Override Menu */
