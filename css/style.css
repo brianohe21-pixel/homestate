@@ -288,6 +288,57 @@ figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .heading-title, #fh5co-hero .hero-video-wrap .slider-text > .slider-text-inner .heading-title {
   font-size: 60px; }
 
+.fh5co-mobile-intro {
+  display: none; }
+.fh5co-mobile-intro .mobile-intro-inner {
+  max-width: 640px;
+  margin: 0 auto; }
+.fh5co-mobile-intro .status {
+  padding: 5px 12px;
+  display: inline-block;
+  margin-bottom: 16px;
+  background: #44C662;
+  color: #fff;
+  font-weight: 400; }
+.fh5co-mobile-intro h1 {
+  font-size: 26px;
+  line-height: 1.35;
+  font-weight: 300;
+  margin: 0 0 12px 0;
+  color: #333; }
+.fh5co-mobile-intro .mobile-intro-highlight {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+  color: #44C662; }
+.fh5co-mobile-intro .mobile-intro-desc p {
+  margin: 0 0 0.75em 0;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6; }
+.fh5co-mobile-intro .slide-amenities {
+  margin: 0.25em 0 1em 0;
+  padding: 0 0 0 1.1em; }
+.fh5co-mobile-intro .slide-amenities li {
+  margin-bottom: 0.5em;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5; }
+.fh5co-mobile-intro .mobile-intro-cta {
+  margin: 24px 0 0 0; }
+@media screen and (max-width: 768px) {
+  #fh5co-hero .hero-slide-desktop {
+    display: none !important; }
+  #fh5co-hero,
+  #fh5co-hero .hero-video-wrap {
+    min-height: 55vh; }
+  #fh5co-hero .hero-video-wrap .slider-text > .slider-text-inner {
+    min-height: 55vh; }
+  .fh5co-mobile-intro {
+    display: block;
+    padding: 2.5em 0; } }
+
 /* Superfish Override Menu */
 .sf-menu {
   margin: 7px 0 0 0 !important; }
@@ -1115,6 +1166,7 @@ div.cs-select span {
     padding: 1.75em 1.5em; } }
 
 #fh5co-contact {
+  scroll-margin-top: 80px;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   -moz-flex-wrap: wrap;
